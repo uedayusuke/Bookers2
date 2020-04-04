@@ -33,29 +33,26 @@
 				<% end %>
 			</div>
 			<div class="col-xs-9">
-				<h2>Books</h2>
+				<h2>Users</h2>
 				<table class="table table-hover table-inverse">
 					<thead>
 						<tr>
-							<th></th>
-							<th>Title</th>
-							<th>Opinion</th>
+							<th>image</th>
+							<th>name</th>
 						</tr>
 					</thead>
 					<tbody>
-						<% @books.each do |book| %>
+						<% @users.each do |book| %>
 							<tr>
 								<td>
-									<%= link_to user_path(params[:id]) do %>
-										<%= attachment_image_tag @user, :profile_image, :fill, 40, 40, format: "jpeg", fallback: "no_image.jpeg" %>
-									<% end %>
+									<%= attachment_image_tag @user, :profile_image, :fill, 40, 40, format: "jpeg", fallback: "no_image.jpeg" %>
 								</td>
 								<td>
-									<%= link_to book_path(book.id) do %>
-										<%= book.title %>
-									<% end %>
+									<%= @user.name %>
 								</td>
-								<td><%= book.body %></td>
+								<td>
+									<%= link_to "show", user_path(@user) %>
+								</td>
 							</tr>
 						<% end %>
 					</tbody>
