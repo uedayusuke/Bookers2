@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse" style="color: white">
+    <header class="navbar navbar-inverse" style="color: white">
       <div class="container">
         <nav class="nav navbar-nav navbar-left" style="font-size: 20px">
           <span>Bookers</span>
@@ -40,7 +40,7 @@
               </li>
             <% else %>
               <li>
-                <%= link_to "#", :style=>"color:white;" do %>
+                <%= link_to root_path, :style=>"color:white;" do %>
                     <i class="glyphicon glyphicon-home home"></i> Home
                 <% end %>
               </li>

@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  def top
+  end
+
+  def about
+  end
+
   def new
     @book = Book.new #
   end
