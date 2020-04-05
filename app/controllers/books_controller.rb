@@ -17,10 +17,26 @@ class BooksController < ApplicationController
   	@book = Book.new(book_params)
   	@book.user_id = current_user.id
   	@book.save
-  	redirect_to books_path #後で詳細ページに変更！
+  	redirect_to book_path(@book)
   end
 
   def edit
+    @book = Book.new
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
+      flash[:notice] = "Book was successfully created."
+      redirect_to book_path(@book)
+    end
+  end
+
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to books_path
   end
 
   private

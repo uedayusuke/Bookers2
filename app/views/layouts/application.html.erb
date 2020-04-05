@@ -45,7 +45,7 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to "#", :style=>"color:white;" do %>
+                <%= link_to home_about_path, :style=>"color:white;" do %>
                    <i class="glyphicon glyphicon-link about"></i> About
                 <% end %>
               </li>
@@ -64,6 +64,7 @@
         </nav>
       </div>
     </header><!-- /header -->
+
     <%= yield %>
   </body>
 </html>
