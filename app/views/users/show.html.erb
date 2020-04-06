@@ -20,7 +20,11 @@
 					</tr>
 				</table>
 				<div class=row>
-					<%= link_to "", edit_user_path(@user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>
+					<% if @user==current_user %>
+						<%= link_to "", edit_user_path, class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>
+					<% else %>
+						<%= link_to "", user_path(current_user.id), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>
+					<% end %>
 				</div>
 
 				<h2>New book</h2>
