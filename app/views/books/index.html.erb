@@ -1,11 +1,7 @@
 <body>
 
 	<div class=container>
-		<% if flash.now[:alert] %>
-			<div class="flash">
-    			<%= flash.now[:alert] %>
-    		</div>
-		<% end %>
+
 
 		<% if @book.errors.any? %>
 			 <div id="error_explanation" class="alert alert-danger">
